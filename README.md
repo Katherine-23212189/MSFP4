@@ -190,7 +190,7 @@ El diagrama debe identificar los siguientes elementos:
 
 Se deben representar las dos condiciones del modelo: control y caso.
 
-![Diagrama del sistema endócrino](Imagenes/Diagrama%20Sistema%20Endocrino.png)
+![Diagrama del sistema endócrino](Imagenes/Sistema%20endocrino.png)
 
 [Volver al contenido](#contenido)
 
@@ -276,9 +276,9 @@ $$
 }
 $$
 
-### 3. Función de transferencia para la condición control
+### 3. Función de transferencia para la condición de control
 
-Para la condición control se utilizan los valores:
+Para la condición de control se utilizan los valores:
 
 $$
 R_1=1000\,\Omega
@@ -304,9 +304,9 @@ G_{control}(s)=
 {0.0001s^2+100.1s+101000}
 $$
 
-### 4. Función de transferencia para la condición caso
+### 4. Función de transferencia para la condición de caso
 
-Para la condición caso se utilizan los valores:
+Para la condición de caso se utilizan los valores:
 
 $$
 R_1=1000\,\Omega
