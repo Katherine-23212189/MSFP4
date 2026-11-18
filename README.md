@@ -343,9 +343,10 @@ Por lo tanto, ambos modelos presentan dos polos, cuya ubicación depende de los 
 ---
 
 <a id="analisis"></a>
+
 ## Análisis temporal y de estabilidad
 
-El análisis temporal y de estabilidad permite estudiar las diferencias entre las condiciones de control y caso, considerando la respuesta del sistema ante una entrada escalón unitario.
+El análisis temporal y de estabilidad permite estudiar las diferencias entre las condiciones de control y caso, considerando la respuesta de ambos sistemas ante una entrada escalón unitario.
 
 ### 1. Error en estado estacionario
 
@@ -385,7 +386,7 @@ $$
 V_{s,ss}=\frac{R_2}{R_1+R_2}
 $$
 
-Para la condición de control:
+**Condición de control:**
 
 $$
 V_{s,ss}^{control}=
@@ -393,10 +394,20 @@ V_{s,ss}^{control}=
 $$
 
 $$
-\boxed{V_{s,ss}^{control}\approx0.9901}
+\boxed{V_{s,ss}^{control}=0.990099}
 $$
 
-Para la condición de caso:
+El error respecto al escalón unitario es:
+
+$$
+e_{ss}^{control}=1-0.990099
+$$
+
+$$
+\boxed{e_{ss}^{control}=0.009901}
+$$
+
+**Condición de caso:**
 
 $$
 V_{s,ss}^{caso}=
@@ -407,11 +418,19 @@ $$
 \boxed{V_{s,ss}^{caso}=0.5}
 $$
 
-La diferencia entre las respuestas en estado estacionario permite identificar el cambio producido por la modificación de los componentes del circuito.
+El error respecto al escalón unitario es:
 
-### 2. Error entre las condiciones de control y caso
+$$
+e_{ss}^{caso}=1-0.5
+$$
 
-La señal de error se define como la diferencia entre la respuesta de referencia y la respuesta de la condición de alterada:
+$$
+\boxed{e_{ss}^{caso}=0.5}
+$$
+
+### 2. Diferencia entre las respuestas de control y caso
+
+Para comparar ambas condiciones, se define la señal de error como la diferencia entre la respuesta de referencia y la respuesta de la condición alterada:
 
 $$
 e(t)=V_{s,control}(t)-V_{s,caso}(t)
@@ -426,14 +445,14 @@ $$
 Sustituyendo los valores obtenidos:
 
 $$
-e_{ss}=0.9901-0.5
+e_{ss}=0.990099-0.5
 $$
 
 $$
-\boxed{e_{ss}\approx0.4901}
+\boxed{e_{ss}=0.490099}
 $$
 
-Este valor representa la diferencia entre las respuestas finales de ambas condiciones antes de incorporar el controlador.
+Este valor representa la diferencia entre las respuestas finales de ambas condiciones antes de incorporar el controlador PID.
 
 ### 3. Estabilidad en lazo abierto
 
@@ -443,15 +462,56 @@ $$
 R_1CLs^2+(R_1CR_2+L)s+(R_1+R_2)=0
 $$
 
-Los polos se determinan mediante las raíces de esta expresión.
+Los polos se determinan mediante las raíces de esta expresión. Su ubicación en el plano complejo permite identificar la estabilidad y el comportamiento dinámico de cada sistema.
 
-Para un sistema de segundo orden, la ubicación de los polos en el plano complejo permite identificar su estabilidad y analizar el comportamiento dinámico esperado.
+**Condición de control:**
 
-Los polos de las condiciones de control y del caso deben calcularse de manera independiente y representarse en el plano complejo para comparar sus posiciones.
+$$
+0.0001s^2+100.1s+101000=0
+$$
 
-### 4. Bosquejo de la respuesta temporal
+Los polos obtenidos son:
 
-A partir de los polos y del valor final de cada función de transferencia, se debe elaborar un bosquejo cualitativo de las respuestas al escalón.
+$$
+p_1\approx-1010.01
+$$
+
+$$
+p_2\approx-999989.99
+$$
+
+**Condición de caso:**
+
+$$
+0.1s^2+1000.1s+2000=0
+$$
+
+Los polos obtenidos son:
+
+$$
+p_1\approx-2.0002
+$$
+
+$$
+p_2\approx-9998.9998
+$$
+
+### 4. Comparación de estabilidad
+
+| Característica | Control | Caso |
+|---|---|---|
+| Orden del sistema | Segundo | Segundo |
+| Número de polos | 2 | 2 |
+| Polos reales | Sí | Sí |
+| Polos negativos | Sí | Sí |
+| Estabilidad | Estable | Estable |
+| Comportamiento | Sobreamortiguado | Sobreamortiguado |
+
+Ambos sistemas presentan dos polos reales, distintos y negativos, por lo que son estables y sobreamortiguados. Esto indica que sus respuestas transitorias no presentan oscilaciones sostenidas.
+
+### 5. Bosquejo de la respuesta temporal
+
+A partir de los polos y del valor final de cada función de transferencia, se elaboran los bosquejos cualitativos de las respuestas ante una entrada escalón unitario.
 
 Se consideran los siguientes aspectos:
 
@@ -459,7 +519,7 @@ Se consideran los siguientes aspectos:
 - Comportamiento transitorio.
 - Posible presencia de sobreimpulso.
 - Valor final de la salida.
-- Diferencia entre las condiciones de control y de caso.
+- Diferencia entre las condiciones de control y caso.
 
 Posteriormente, los bosquejos se comparan con las respuestas obtenidas mediante MATLAB, Simulink y Python.
 
