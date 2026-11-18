@@ -1,9 +1,9 @@
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=Katherine-23212189/MSFP4)
-# Práctica 4 — Modelo y control del sistema endócrino
+# Práctica 4 — Modelo y control del sistema endocrino
 
 Repositorio académico de la asignatura **Modelado de Sistemas Fisiológicos**, correspondiente al programa de **Ingeniería Biomédica** del Tecnológico Nacional de México / Instituto Tecnológico de Tijuana. Esta práctica integra modelado matemático, analogías eléctricas de sistemas fisiológicos, análisis del comportamiento dinámico, diseño de controladores PID y simulación computacional.
 
-El caso de estudio representa de manera fenomenológica el **sistema endócrino**, considerando los procesos de secreción, transporte, almacenamiento y respuesta hormonal. Mediante una analogía eléctrica se propone un circuito equivalente de segundo orden, el cual permite comparar una condición de referencia (control) con una condición alterada (caso), diseñar un controlador PID y analizar las respuestas obtenidas mediante diferentes herramientas computacionales.
+El caso de estudio representa de manera fenomenológica el **sistema endocrino**, considerando los procesos de secreción, transporte, almacenamiento y respuesta hormonal. Mediante una analogía eléctrica se propone un circuito equivalente de segundo orden, el cual permite comparar una condición de referencia (control) con una condición de alterada (caso), diseñar un controlador PID y analizar las respuestas obtenidas mediante diferentes herramientas computacionales.
 
 **Docente:** Dr. Paul Antonio Valle Trujillo  
 **Correo:** paul.valle@tectijuana.edu.mx  
@@ -26,7 +26,7 @@ El caso de estudio representa de manera fenomenológica el **sistema endócrino*
 2. [Competencia y objetivos](#objetivos)
 3. [Relación con el temario](#temario)
 4. [Modelo fisiológico y analogía eléctrica](#analogia)
-5. [Diagrama del sistema endócrino](#diagrama)
+5. [Diagrama del sistema endocrino](#diagrama)
 6. [Formulación matemática](#modelo)
 7. [Análisis temporal y de estabilidad](#analisis)
 8. [Señales de entrada y condiciones de simulación](#senales)
@@ -47,15 +47,15 @@ El caso de estudio representa de manera fenomenológica el **sistema endócrino*
 <a id="resumen"></a>
 ## Resumen
 
-La práctica tiene como propósito **modelar, analizar y controlar un sistema endócrino mediante una analogía eléctrica**, considerando de manera simplificada los procesos de secreción, transporte, almacenamiento y respuesta hormonal.
+La práctica tiene como propósito **modelar, analizar y controlar un sistema endocrino mediante una analogía eléctrica**, considerando de manera simplificada los procesos de secreción, transporte, almacenamiento y respuesta hormonal.
 
 Para representar estos procesos se propone un circuito eléctrico equivalente de segundo orden, compuesto por una resistencia $R_1$, una capacitancia $C$, una inductancia $L$ y una resistencia $R_2$. Estos elementos permiten representar fenomenológicamente las pérdidas durante el transporte hormonal, la acumulación temporal de la señal y la dinámica de respuesta del tejido u órgano diana.
 
-El modelo contempla dos condiciones de estudio: una condición de referencia denominada **control** y una condición alterada denominada **caso**. A partir de los valores asignados a cada componente eléctrico, se obtienen las funciones de transferencia correspondientes y se analiza su comportamiento ante una entrada escalón unitario.
+El modelo contempla dos condiciones de estudio: una condición de referencia denominada **control** y una condición de alterada denominada **caso**. A partir de los valores asignados a cada componente eléctrico, se obtienen las funciones de transferencia correspondientes y se analiza su comportamiento ante una entrada escalón unitario.
 
 Posteriormente, se incorpora un controlador PID con el propósito de reducir la diferencia entre la respuesta del caso y la respuesta de referencia. La implementación se desarrolla mediante MATLAB, Simulink, Simscape Electrical y Python. Finalmente, se plantea la construcción experimental de los circuitos y del controlador analógico para comparar los resultados de simulación con las mediciones de laboratorio.
 
-**Palabras clave:** Sistema endócrino; Modelado matemático; Función de transferencia; Analogía eléctrica; Control PID.
+**Palabras clave:** Sistema endocrino; Modelado matemático; Función de transferencia; Analogía eléctrica; Control PID.
 
 [Volver al contenido](#contenido)
 
@@ -68,18 +68,18 @@ Posteriormente, se incorpora un controlador PID con el propósito de reducir la 
 
 Modelizar sistemas fisiológicos mediante analogías eléctricas, ecuaciones diferenciales y funciones de transferencia para analizar su comportamiento dinámico y diseñar estrategias de control mediante técnicas de control clásico.
 
-En particular, la práctica permite interpretar una descripción simplificada de los procesos de secreción, transporte, almacenamiento y respuesta hormonal para proponer un circuito eléctrico equivalente de segundo orden. Posteriormente, se comparan una condición de referencia y una condición alterada, se diseña un controlador PID y se contrastan los resultados obtenidos mediante modelado analítico, simulación computacional y experimentación.
+En particular, la práctica permite interpretar una descripción simplificada de los procesos de secreción, transporte, almacenamiento y respuesta hormonal para proponer un circuito eléctrico equivalente de segundo orden. Posteriormente, se comparan una condición de referencia y una condición de alterada, se diseña un controlador PID y se contrastan los resultados obtenidos mediante modelado analítico, simulación computacional y experimentación.
 
 ### Objetivo general
 
-Desarrollar el modelo matemático y el circuito eléctrico equivalente de un sistema endócrino simplificado, mediante la aplicación de analogías eléctricas y funciones de transferencia, para analizar su comportamiento dinámico y diseñar un controlador PID que permita aproximar la respuesta de una condición alterada a una respuesta de referencia.
+Desarrollar el modelo matemático y el circuito eléctrico equivalente de un sistema endocrino simplificado, mediante la aplicación de analogías eléctricas y funciones de transferencia, para analizar su comportamiento dinámico y diseñar un controlador PID que permita aproximar la respuesta de una condición de alterada a una respuesta de referencia.
 
 ### Objetivos específicos
 
 - Interpretar los procesos de secreción, transporte, almacenamiento y respuesta hormonal.
-- Identificar los elementos eléctricos que conforman el modelo del sistema endócrino.
-- Construir los circuitos equivalentes correspondientes a las condiciones control y caso.
-- Obtener las funciones de transferencia de ambas condiciones.
+- Identificar los elementos eléctricos que conforman el modelo del sistema endocrino.
+- Construir los circuitos equivalentes correspondientes a las condiciones de control y caso.
+- Obtener las funciones de transferencia de ambas condiciones de.
 - Analizar el error en estado estacionario ante una entrada escalón unitario.
 - Calcular los polos y determinar la estabilidad de los sistemas.
 - Formular las ecuaciones integro-diferenciales mediante las leyes de Kirchhoff.
@@ -105,7 +105,7 @@ La práctica integra contenidos correspondientes a la asignatura **Modelado de S
 | II | Modelado matemático | Representación de sistemas fisiológicos, analogías eléctricas, ecuaciones diferenciales y funciones de transferencia |
 | III | Controladores | Diseño, sintonización e implementación de controladores PID |
 
-El enfoque combina **Ingeniería Biomédica, Electrónica, Modelado Matemático y Teoría de Control**, mediante el estudio de un modelo fenomenológico del sistema endócrino y su representación mediante circuitos eléctricos equivalentes.
+El enfoque combina **Ingeniería Biomédica, Electrónica, Modelado Matemático y Teoría de Control**, mediante el estudio de un modelo fenomenológico del sistema endocrino y su representación mediante circuitos eléctricos equivalentes.
 
 [Volver al contenido](#contenido)
 
@@ -114,7 +114,7 @@ El enfoque combina **Ingeniería Biomédica, Electrónica, Modelado Matemático 
 <a id="analogia"></a>
 ## Modelo fisiológico y analogía eléctrica
 
-El sistema endócrino participa en la regulación de diferentes procesos fisiológicos mediante la liberación de hormonas producidas por glándulas especializadas. Una vez secretadas, estas moléculas son transportadas mediante la circulación hasta los tejidos u órganos diana, donde interactúan con receptores específicos y producen respuestas fisiológicas.
+El sistema endocrino participa en la regulación de diferentes procesos fisiológicos mediante la liberación de hormonas producidas por glándulas especializadas. Una vez secretadas, estas moléculas son transportadas mediante la circulación hasta los tejidos u órganos diana, donde interactúan con receptores específicos y producen respuestas fisiológicas.
 
 Para estudiar estos procesos mediante herramientas de modelado y control, se utiliza una representación fenomenológica simplificada. El modelo no representa un eje hormonal específico ni establece una equivalencia directa entre los componentes eléctricos y parámetros fisiológicos medidos experimentalmente. Su finalidad es reproducir cualitativamente propiedades dinámicas como el almacenamiento, la disipación, el retardo y la inercia de la respuesta.
 
@@ -130,7 +130,7 @@ Las variables principales del modelo son:
 
 | Variable | Descripción |
 |---|---|
-| $V_e(t)$ | Estímulo que activa la respuesta del sistema endócrino |
+| $V_e(t)$ | Estímulo que activa la respuesta del sistema endocrino |
 | $F_e(t)$ | Flujo asociado con la secreción y el transporte hormonal |
 | $F_s(t)$ | Flujo asociado con la utilización o respuesta del órgano diana |
 | $V_s(t)$ | Nivel efectivo y normalizado de la señal hormonal disponible |
@@ -152,11 +152,11 @@ La salida $V_s(t)$ se mide en el nodo de unión entre $R_1$, $C$ y $L$.
 | Flujo asociado con la respuesta del tejido diana | $F_s(t)$ | Corriente correspondiente a la rama de respuesta |
 | Nivel hormonal efectivo | $V_s(t)$ | Variable de salida normalizada |
 
-> **Alcance de la analogía:** las correspondencias anteriores constituyen una representación fenomenológica con fines académicos. Los valores de los componentes eléctricos no representan directamente magnitudes fisiológicas del sistema endócrino.
+> **Alcance de la analogía:** las correspondencias anteriores constituyen una representación fenomenológica con fines académicos. Los valores de los componentes eléctricos no representan directamente magnitudes fisiológicas del sistema endocrino.
 
 ### Valores de los componentes
 
-Para el desarrollo de la práctica se consideran dos condiciones:
+Para el desarrollo de la práctica se consideran dos condiciones de:
 
 | Componente | Control | Caso |
 |---|---:|---:|
@@ -172,9 +172,9 @@ La modificación de los valores de capacitancia y resistencia permite estudiar l
 ---
 
 <a id="diagrama"></a>
-## Diagrama del sistema endócrino
+## Diagrama del sistema endocrino
 
-El circuito eléctrico equivalente se construye a partir de la descripción funcional del sistema endócrino. La representación debe mostrar la fuente de entrada, la resistencia de transporte, el capacitor conectado a la referencia y la rama formada por el inductor y la resistencia de salida.
+El circuito eléctrico equivalente se construye a partir de la descripción funcional del sistema endocrino. La representación debe mostrar la fuente de entrada, la resistencia de transporte, el capacitor conectado a la referencia y la rama formada por el inductor y la resistencia de salida.
 
 El diagrama debe identificar los siguientes elementos:
 
@@ -190,7 +190,7 @@ El diagrama debe identificar los siguientes elementos:
 
 Se deben representar las dos condiciones del modelo: control y caso.
 
-![Diagrama del sistema endócrino](Imagenes/Sistema%20endocrino.png)
+![Diagrama del sistema endocrino](Imagenes/Sistema%20endocrino.png)
 
 [Volver al contenido](#contenido)
 
@@ -235,7 +235,7 @@ $$
 V_e(t)=R_1\left(C\frac{dV_s(t)}{dt}+F_s(t)\right)+V_s(t)
 $$
 
-Aplicando la transformada de Laplace, considerando condiciones iniciales nulas:
+Aplicando la transformada de Laplace, considerando condiciones de iniciales nulas:
 
 $$
 V_e(s)=R_1CsV_s(s)+R_1F_s(s)+V_s(s)
@@ -345,7 +345,7 @@ Por lo tanto, ambos modelos presentan dos polos, cuya ubicación depende de los 
 <a id="analisis"></a>
 ## Análisis temporal y de estabilidad
 
-El análisis temporal y de estabilidad permite estudiar las diferencias entre las condiciones control y caso, considerando la respuesta del sistema ante una entrada escalón unitario.
+El análisis temporal y de estabilidad permite estudiar las diferencias entre las condiciones de control y caso, considerando la respuesta del sistema ante una entrada escalón unitario.
 
 ### 1. Error en estado estacionario
 
@@ -396,7 +396,7 @@ $$
 \boxed{V_{s,ss}^{control}\approx0.9901}
 $$
 
-Para la condición caso:
+Para la condición de caso:
 
 $$
 V_{s,ss}^{caso}=
@@ -409,9 +409,9 @@ $$
 
 La diferencia entre las respuestas en estado estacionario permite identificar el cambio producido por la modificación de los componentes del circuito.
 
-### 2. Error entre las condiciones control y caso
+### 2. Error entre las condiciones de control y caso
 
-La señal de error se define como la diferencia entre la respuesta de referencia y la respuesta de la condición alterada:
+La señal de error se define como la diferencia entre la respuesta de referencia y la respuesta de la condición de alterada:
 
 $$
 e(t)=V_{s,control}(t)-V_{s,caso}(t)
@@ -447,7 +447,7 @@ Los polos se determinan mediante las raíces de esta expresión.
 
 Para un sistema de segundo orden, la ubicación de los polos en el plano complejo permite identificar su estabilidad y analizar el comportamiento dinámico esperado.
 
-Los polos de las condiciones de control y caso deben calcularse de manera independiente y representarse en el plano complejo para comparar sus posiciones.
+Los polos de las condiciones de control y del caso deben calcularse de manera independiente y representarse en el plano complejo para comparar sus posiciones.
 
 ### 4. Bosquejo de la respuesta temporal
 
@@ -470,7 +470,7 @@ Posteriormente, los bosquejos se comparan con las respuestas obtenidas mediante 
 <a id="senales"></a>
 ## Señales de entrada y condiciones de simulación
 
-La entrada utilizada durante la práctica corresponde a un escalón unitario, el cual representa un estímulo sostenido aplicado al sistema endócrino.
+La entrada utilizada durante la práctica corresponde a un escalón unitario, el cual representa un estímulo sostenido aplicado al sistema endocrino.
 
 La señal de entrada se expresa como:
 
@@ -506,7 +506,7 @@ Las simulaciones de las condiciones de control y de caso deben utilizar la misma
 <a id="matlab"></a>
 ## Implementación en MATLAB, Simulink y Simscape
 
-La implementación computacional permite representar el sistema endócrino mediante diferentes métodos para verificar que las respuestas obtenidas sean consistentes entre sí.
+La implementación computacional permite representar el sistema endocrino mediante diferentes métodos para verificar que las respuestas obtenidas sean consistentes entre sí.
 
 ### 1. Modelo mediante ecuaciones integro-diferenciales
 
@@ -539,7 +539,7 @@ Ambos modelos se someten a una entrada escalón unitario durante el intervalo de
 
 Se construyen los circuitos eléctricos correspondientes a las condiciones de control y caso utilizando los componentes de Simscape Electrical.
 
-Los valores de las resistencias, capacitancias e inductancias deben coincidir con los establecidos para cada condición.
+Los valores de las resistencias, capacitancias e inductancias deben coincidir con los establecidos para cada condición de.
 
 ### 4. Comparación de las representaciones
 
@@ -622,13 +622,13 @@ Se analiza el efecto del controlador sobre el error, la rapidez de respuesta, el
 <a id="python"></a>
 ## Reproducción en Python
 
-La implementación en Python permite reproducir las funciones de transferencia correspondientes a las condiciones control y caso, así como analizar el comportamiento del sistema controlado.
+La implementación en Python permite reproducir las funciones de transferencia correspondientes a las condiciones de control y caso, así como analizar el comportamiento del sistema controlado.
 
 El programa se desarrolla mediante **Visual Studio Code**, utilizando las bibliotecas necesarias para realizar los cálculos numéricos y generar las gráficas correspondientes.
 
 Se deben considerar los siguientes apartados:
 
-1. Definición de los parámetros de las condiciones control y caso.
+1. Definición de los parámetros de las condiciones de control y caso.
 2. Construcción de las funciones de transferencia.
 3. Definición del vector temporal.
 4. Obtención de las respuestas al escalón unitario.
@@ -674,7 +674,7 @@ La respuesta obtenida se compara con la del bloque ideal PID Controller para ver
 
 ### 4. Implementación experimental
 
-La implementación experimental contempla la construcción del controlador mediante amplificadores operacionales y su conexión con el circuito correspondiente a la condición caso.
+La implementación experimental contempla la construcción del controlador mediante amplificadores operacionales y su conexión con el circuito correspondiente a la condición de caso.
 
 Se debe configurar la alimentación simétrica de los amplificadores operacionales de acuerdo con las especificaciones utilizadas en el laboratorio.
 
@@ -687,7 +687,7 @@ Finalmente, se registran las respuestas mediante el osciloscopio para comparar e
 <a id="resultados"></a>
 ## Resultados y verificación cruzada
 
-Los resultados de la práctica permiten comparar las diferentes representaciones del sistema endócrino y verificar la correspondencia entre el modelo matemático, las simulaciones computacionales y la implementación experimental.
+Los resultados de la práctica permiten comparar las diferentes representaciones del sistema endocrino y verificar la correspondencia entre el modelo matemático, las simulaciones computacionales y la implementación experimental.
 
 ### 1. Comparación de modelos
 
@@ -696,7 +696,7 @@ Se consideran las siguientes representaciones:
 | Implementación | Descripción |
 |---|---|
 | Ecuaciones integro-diferenciales | Modelo desarrollado en Simulink |
-| Funciones de transferencia | Representación matemática de las condiciones control y caso |
+| Funciones de transferencia | Representación matemática de las condiciones de control y caso |
 | Simscape Electrical | Circuitos eléctricos equivalentes |
 | MATLAB | Cuaderno computacional para ejecutar y graficar las respuestas |
 | Python | Reproducción de las funciones de transferencia y del sistema controlado |
@@ -709,18 +709,17 @@ Se consideran las siguientes representaciones:
 | Análisis matemático | Desarrollo de las ecuaciones y funciones de transferencia |
 | Diagrama del sistema | Representación del circuito eléctrico equivalente |
 | Modelo de Simulink | Implementación mediante ecuaciones integro-diferenciales y funciones de transferencia |
-| Circuitos Simscape | Modelos eléctricos de las condiciones control y caso |
 | Cuaderno MATLAB | Archivo computacional para ejecutar y representar las respuestas |
 | Imágenes MATLAB | Gráficas de las respuestas obtenidas |
 | Controlador PID | Configuración y ganancias obtenidas mediante Tune |
 | Código Python | Implementación de las funciones de transferencia y del controlador |
 | Imágenes Python | Capturas del código y resultados obtenidos |
-| Controlador analógico | Diseño y simulación mediante amplificadores operacionales |
 | Evidencia experimental | Capturas de las respuestas obtenidas mediante el osciloscopio |
+| Diagrama ilustrativo | Representación en biorender |
 
 ### 3. Aspectos para discutir
 
-- Diferencias entre las condiciones control y caso.
+- Diferencias entre las condiciones de control y caso.
 - Influencia de la capacitancia y la resistencia sobre la respuesta temporal.
 - Relación entre la ubicación de los polos y la estabilidad.
 - Diferencia entre las respuestas en estado estacionario.
@@ -740,22 +739,22 @@ Las diferencias entre simulación y experimentación pueden relacionarse con las
 
 ```mermaid
 flowchart TD
-    A[Descripcion fisiologica del sistema endocrino] --> B[Identificacion de procesos]
-    B --> C[Propuesta del circuito electrico equivalente]
-    C --> D[Definicion de condiciones control y caso]
-    D --> E[Formulacion matematica]
-    E --> F[Obtencion de funciones de transferencia]
-    F --> G[Analisis de error y estabilidad]
-    G --> H[Implementacion en Simulink]
-    H --> I[Simulacion en lazo abierto]
-    I --> J[Diseno y sintonizacion PID]
-    J --> K[Simulacion en lazo cerrado]
-    K --> L[Implementacion en Simscape Electrical]
-    L --> M[Reproduccion en Python]
-    M --> N[Diseno del controlador analogico]
-    N --> O[Verificacion experimental]
-    O --> P[Comparacion de resultados]
-    P --> Q[Documentacion en GitHub]
+    A[Descripción fisiológica del sistema endocrino] --> B[Identificación de procesos]
+    B --> C[Propuesta del circuito eléctrico equivalente]
+    C --> D[Definición de condiciones de control y caso]
+    D --> E[Formulación matemática]
+    E --> F[Obtención de funciones de transferencia]
+    F --> G[Análisis de error y estabilidad]
+    G --> H[Implementación en Simulink]
+    H --> I[Simulación en lazo abierto]
+    I --> J[Diseño y sintonización PID]
+    J --> K[Simulación en lazo cerrado]
+    K --> L[Implementación en Simscape Electrical]
+    L --> M[Reproducción en Python]
+    M --> N[Diseño del controlador analogico]
+    N --> O[Verificación experimental]
+    O --> P[Comparación de resultados]
+    P --> Q[Documentación en GitHub]
 ```
 
 El procedimiento integra la interpretación fisiológica, el desarrollo matemático, la representación eléctrica equivalente, la simulación computacional, el diseño del controlador y la comparación de resultados.
@@ -767,16 +766,16 @@ El procedimiento integra la interpretación fisiológica, el desarrollo matemát
 <a id="actividades"></a>
 ## Actividades del estudiante
 
-La práctica sigue una secuencia de **modelado, análisis, simulación, control y verificación experimental** del sistema endócrino.
+La práctica sigue una secuencia de **modelado, análisis, simulación, control y verificación experimental** del sistema endocrino.
 
 ### Etapa 1. Construcción del circuito y formulación matemática
 
-- [ ] Interpretar la descripción fisiológica del sistema endócrino.
+- [ ] Interpretar la descripción fisiológica del sistema endocrino.
 - [ ] Identificar los procesos de secreción, transporte, almacenamiento y respuesta hormonal.
 - [ ] Proponer el circuito eléctrico equivalente.
 - [ ] Identificar la entrada y salida del sistema.
 - [ ] Identificar los elementos $R_1$, $C$, $L$ y $R_2$.
-- [ ] Construir los circuitos correspondientes a las condiciones control y caso.
+- [ ] Construir los circuitos correspondientes a las condiciones de control y caso.
 - [ ] Obtener las funciones de transferencia.
 - [ ] Calcular el error en estado estacionario.
 - [ ] Calcular los polos de ambos sistemas.
@@ -789,27 +788,27 @@ La práctica sigue una secuencia de **modelado, análisis, simulación, control 
 - [ ] Implementar el modelo mediante ecuaciones integro-diferenciales en Simulink.
 - [ ] Implementar las funciones de transferencia en Simulink.
 - [ ] Construir los circuitos equivalentes mediante Simscape Electrical.
-- [ ] Configurar los parámetros de las condiciones control y caso.
+- [ ] Configurar los parámetros de las condiciones de control y caso.
 - [ ] Aplicar una entrada escalón unitario.
 - [ ] Ejecutar las simulaciones durante el intervalo de 0 a 10 segundos.
 - [ ] Comparar las respuestas obtenidas mediante las tres representaciones.
 
 ### Etapa 3. Diseño y sintonización del controlador PID
 
-- [ ] Utilizar la respuesta de la condición control como referencia.
-- [ ] Definir la señal de error entre las respuestas control y caso.
+- [ ] Utilizar la respuesta de la condición de control como referencia.
+- [ ] Definir la señal de error entre las respuestas de control y caso.
 - [ ] Construir el sistema de retroalimentación negativa en Simulink.
 - [ ] Incorporar el bloque PID Controller.
 - [ ] Utilizar la herramienta Tune para sintonizar el controlador.
 - [ ] Registrar las ganancias $k_P$, $k_I$ y $k_D$.
 - [ ] Guardar evidencia de la configuración del controlador.
 - [ ] Ejecutar la simulación en lazo cerrado.
-- [ ] Comparar las respuestas control, caso y PID.
+- [ ] Comparar las respuestas de control, caso y PID.
 
 ### Etapa 4. Reproducción computacional
 
 - [ ] Desarrollar el cuaderno computacional en MATLAB.
-- [ ] Extraer las respuestas de las condiciones control, caso y PID.
+- [ ] Extraer las respuestas de las condiciones de control, caso y PID.
 - [ ] Representar gráficamente las respuestas.
 - [ ] Identificar las variables y sus unidades.
 - [ ] Guardar las figuras obtenidas en formato PDF.
@@ -824,7 +823,7 @@ La práctica sigue una secuencia de **modelado, análisis, simulación, control 
 - [ ] Seleccionar valores comerciales de resistencias y capacitores.
 - [ ] Construir el controlador mediante amplificadores operacionales en Simscape Electrical.
 - [ ] Comparar la respuesta del controlador analógico con el bloque PID ideal.
-- [ ] Construir los circuitos control y caso en protoboard.
+- [ ] Construir los circuitos de control y caso en protoboard.
 - [ ] Configurar el generador de funciones.
 - [ ] Registrar las señales de entrada y salida mediante el osciloscopio.
 - [ ] Construir el sistema experimental en lazo cerrado.
@@ -847,46 +846,36 @@ La práctica sigue una secuencia de **modelado, análisis, simulación, control 
 ---
 
 <a id="estructura"></a>
+
+
 ## Estructura del repositorio
 
-Una organización sugerida para los archivos de la práctica es:
+La organización de los archivos correspondientes a la práctica se presenta de la siguiente manera:
 
 ```text
 .
 ├── README.md
 ├── Imagenes/
-│   └── Diagrama Sistema Endocrino.png
+│   └── Diagramas y evidencias del desarrollo
 ├── Analisis_Matematico.pdf
-├── Simulink/
-│   ├── Modelo_Ecuaciones_Control.slx
-│   ├── Modelo_Ecuaciones_Caso.slx
-│   ├── Modelo_Transferencia_Control.slx
-│   └── Modelo_Transferencia_Caso.slx
-├── Simscape/
-│   ├── Circuito_Control.slx
-│   └── Circuito_Caso.slx
+├── Modelos_y_Resultados/
+│   ├── Analisis_Control_y_Caso.pdf
+│   └── Resultados_Control_Python.pdf
 ├── MATLAB/
-│   ├── Coria23212189P56.mlx
-│   └── Coria23212189P56.pdf
+│   ├── Codigo_Practica.mlx
+│   └── Reporte_MATLAB.pdf
 ├── Python/
-│   └── Coria23212189P56.py
-├── Imagenes_MATLAB/
-│   ├── respuesta_control.png
-│   ├── respuesta_caso.png
-│   └── comparacion_PID.png
-├── Imagenes_Python/
-│   ├── respuesta_control.png
-│   ├── respuesta_caso.png
-│   └── comparacion_PID.png
+│   └── Codigo_Practica.py
+├── Simulink/
+│   └── Modelo_Sistema_Endocrino.slx
 ├── PID/
-│   ├── sintonizacion_Tune.png
-│   └── controlador_analogico.png
-└── Experimental/
-    ├── circuito_control.png
-    ├── circuito_caso.png
-    ├── respuesta_lazo_abierto.png
-    └── respuesta_lazo_cerrado.png
+│   └── Diseno_y_Sintonizacion_PID.jpeg
+├── Evidencia_Experimental/
+│   └── Circuitos_y_Resultados.bmp
+├── CITATION.cff
+└── LICENSE
 ```
+
 
 **Criterio de nombres:** la estructura anterior es una propuesta de organización. Los nombres de los archivos y las carpetas deben ajustarse a los modelos, programas y evidencias que se incorporen realmente al repositorio. Las imágenes y resultados experimentales deben agregarse conforme se obtengan durante el desarrollo de la práctica.
 
@@ -936,9 +925,9 @@ Para la implementación experimental se consideran los siguientes componentes:
 ### Secuencia de reproducción
 
 1. Consultar los materiales proporcionados para la práctica.
-2. Interpretar la descripción fisiológica simplificada del sistema endócrino.
+2. Interpretar la descripción fisiológica simplificada del sistema endocrino.
 3. Proponer el circuito eléctrico equivalente.
-4. Definir los valores de los componentes para las condiciones control y caso.
+4. Definir los valores de los componentes para las condiciones de control y caso.
 5. Obtener las funciones de transferencia mediante el desarrollo matemático.
 6. Calcular el error en estado estacionario y los polos de ambos sistemas.
 7. Analizar la estabilidad y elaborar los bosquejos de las respuestas temporales.
@@ -958,12 +947,12 @@ Para la implementación experimental se consideran los siguientes componentes:
 
 | Entregable | Evidencia solicitada |
 |---|---|
-| Circuito eléctrico equivalente | Diagrama de las condiciones control y caso |
+| Circuito eléctrico equivalente | Diagrama de las condiciones de control y caso |
 | Análisis matemático | Desarrollo de las ecuaciones y funciones de transferencia |
 | Análisis de estabilidad | Cálculo y representación de los polos |
 | Análisis temporal | Bosquejos y respuestas al escalón |
 | Modelo Simulink | Archivos de las implementaciones mediante ecuaciones y funciones de transferencia |
-| Circuitos Simscape | Modelos eléctricos de las condiciones control y caso |
+| Circuitos Simscape | Modelos eléctricos de las condiciones de control y caso |
 | Cuaderno MATLAB | Archivo original `.mlx` |
 | Exportación MATLAB | Archivo `.pdf` con las gráficas y resultados |
 | Controlador PID | Configuración y ganancias obtenidas mediante Tune |
@@ -976,7 +965,7 @@ Para la implementación experimental se consideran los siguientes componentes:
 
 El README debe distinguir entre el desarrollo matemático, las implementaciones computacionales, el diseño del controlador y los resultados experimentales.
 
-Las gráficas y capturas deben acompañarse de una explicación del comportamiento del sistema, identificando las diferencias entre las condiciones control y caso, así como el efecto de la incorporación del controlador PID.
+Las gráficas y capturas deben acompañarse de una explicación del comportamiento del sistema, identificando las diferencias entre las condiciones de control y caso, así como el efecto de la incorporación del controlador PID.
 
 La comparación entre las diferentes implementaciones debe considerar las mismas condiciones de entrada y los parámetros establecidos para cada modelo.
 
@@ -987,7 +976,7 @@ La comparación entre las diferentes implementaciones debe considerar las mismas
 <a id="referencias"></a>
 ## Referencias
 
-[1] P. A. Valle, *Modelado y control del sistema endócrino*, Práctica 5.6, asignatura Modelado de Sistemas Fisiológicos, Tecnológico Nacional de México / Instituto Tecnológico de Tijuana, pp. 96-104, 2026.
+[1] P. A. Valle, *Modelado y control del sistema endocrino*, Práctica 5.6, asignatura Modelado de Sistemas Fisiológicos, Tecnológico Nacional de México / Instituto Tecnológico de Tijuana, pp. 96-104, 2026.
 
 [2] P. A. Valle, *Syllabus para Modelado de Sistemas Fisiológicos*, Tecnológico Nacional de México / Instituto Tecnológico de Tijuana. Disponible en: https://biomath.xyz/course/
 
@@ -997,6 +986,6 @@ La comparación entre las diferentes implementaciones debe considerar las mismas
 
 ## Uso académico
 
-Este repositorio se utiliza como evidencia de la práctica **Modelo y control del sistema endócrino**, correspondiente a la asignatura Modelado de Sistemas Fisiológicos. Su finalidad es desarrollar habilidades de modelado matemático, interpretación de sistemas fisiológicos, aplicación de analogías eléctricas, análisis de estabilidad, diseño de controladores PID y simulación computacional.
+Este repositorio se utiliza como evidencia de la práctica **Modelo y control del sistema endocrino**, correspondiente a la asignatura Modelado de Sistemas Fisiológicos. Su finalidad es desarrollar habilidades de modelado matemático, interpretación de sistemas fisiológicos, aplicación de analogías eléctricas, análisis de estabilidad, diseño de controladores PID y simulación computacional.
 
 El modelo utilizado representa de manera fenomenológica y simplificada algunos procesos asociados con la secreción, transporte, almacenamiento y respuesta hormonal. Por lo tanto, los resultados obtenidos permiten estudiar el comportamiento dinámico del circuito equivalente con fines académicos, sin establecer una equivalencia directa con mediciones fisiológicas reales.
