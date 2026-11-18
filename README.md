@@ -3,7 +3,7 @@
 
 Repositorio académico de la asignatura **Modelado de Sistemas Fisiológicos**, correspondiente al programa de **Ingeniería Biomédica** del Tecnológico Nacional de México / Instituto Tecnológico de Tijuana. Esta práctica integra modelado matemático, analogías eléctricas de sistemas fisiológicos, análisis del comportamiento dinámico, diseño de controladores PID y simulación computacional.
 
-El caso de estudio representa de manera fenomenológica el **sistema endocrino**, considerando los procesos de secreción, transporte, almacenamiento y respuesta hormonal. Mediante una analogía eléctrica se propone un circuito equivalente de segundo orden, el cual permite comparar una condición de referencia (control) con una condición de alterada (caso), diseñar un controlador PID y analizar las respuestas obtenidas mediante diferentes herramientas computacionales.
+El caso de estudio representa, de manera fenomenológica, el **sistema endocrino**, considerando los procesos de secreción, transporte, almacenamiento y respuesta hormonal. Mediante una analogía eléctrica se propone un circuito equivalente de segundo orden, el cual permite comparar una condición de referencia (control) con una condición alterada (caso), diseñar un controlador PID y analizar las respuestas obtenidas mediante diferentes herramientas computacionales.
 
 **Docente:** Dr. Paul Antonio Valle Trujillo  
 **Correo:** paul.valle@tectijuana.edu.mx  
@@ -156,7 +156,7 @@ La salida $V_s(t)$ se mide en el nodo de unión entre $R_1$, $C$ y $L$.
 
 ### Valores de los componentes
 
-Para el desarrollo de la práctica se consideran dos condiciones de:
+Para el desarrollo de la práctica se consideran dos condiciones:
 
 | Componente | Control | Caso |
 |---|---:|---:|
@@ -591,19 +591,26 @@ $$
 K(s)=k_P+\frac{k_I}{s}+k_Ds
 $$
 
+
+
 ### 3. Sintonización mediante Tune
 
 La sintonización se realiza mediante la herramienta **Tune** de MATLAB/Simulink, utilizando el bloque PID Controller.
 
 Durante este procedimiento se ajustan las ganancias proporcional, integral y derivativa para obtener una respuesta estable y reducir el error entre las condiciones de control y caso.
 
-Los valores obtenidos deben registrarse para utilizarlos posteriormente en la implementación mediante Python y en el diseño del controlador analógico.
+Para la condición de caso, se obtuvieron los siguientes valores:
 
 | Parámetro | Descripción | Valor obtenido |
-|---|---|---|
-| $k_P$ | Ganancia proporcional | Pendiente de registrar |
-| $k_I$ | Ganancia integral | Pendiente de registrar |
-| $k_D$ | Ganancia derivativa | Pendiente de registrar |
+|---|---|---:|
+| $k_P$ | Ganancia proporcional | 136.858 |
+| $k_I$ | Ganancia integral | 3466.5953 |
+| $k_D$ | Ganancia derivativa | 0.1673 |
+| $N$ | Coeficiente del filtro derivativo | 521.3959 |
+
+La respuesta obtenida presentó un tiempo de subida de 0.0128 segundos, un tiempo de establecimiento de 0.0951 segundos y un sobreimpulso del 9.27 %. Asimismo, el análisis indicó un comportamiento estable en lazo cerrado.
+
+Los valores obtenidos se utilizan posteriormente en la implementación mediante Python y en el diseño del controlador analógico.
 
 ### 4. Análisis de la respuesta en lazo cerrado
 
