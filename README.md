@@ -721,7 +721,7 @@ Se consideran las siguientes representaciones:
 | Controlador PID | Configuración y ganancias obtenidas mediante Tune |
 | Código Python | Implementación de las funciones de transferencia y del controlador |
 | Imágenes Python | Capturas del código y resultados obtenidos |
-| Evidencia experimental | Capturas de las respuestas obtenidas mediante el osciloscopio |
+| Evidencia experimental | Capturas de las respuestas obtenidas mediante el osciloscopio y circuito físico |
 | Diagrama ilustrativo | Representación en biorender |
 
 ### 3. Aspectos para discutir
